@@ -20,7 +20,9 @@ async function testConnection() {
     conn.release();
   } catch (err) {
     console.error("❌  MySQL gagal terhubung:", err.message);
-    process.exit(1);
+    // Di lingkungan serverless (Vercel), jangan matikan process —
+    // biarkan error muncul natural saat query dijalankan.
+    if (!process.env.VERCEL) process.exit(1);
   }
 }
 
