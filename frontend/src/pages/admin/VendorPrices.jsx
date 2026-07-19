@@ -26,7 +26,7 @@ const hargaToSkala = (rp) => {
 };
 const flexuralToSkala = (mpa) => {
   const v = parseFloat(mpa) || 0;
-  if (v > 1200) return 4;
+  if (v >= 1200) return 4;
   if (v >= 1001) return 3;
   if (v >= 800) return 2;
   return 1;
@@ -40,7 +40,7 @@ const leadTimeToSkala = (days) => {
 };
 const reputasiToSkala = (years) => {
   const v = parseFloat(years) || 0;
-  if (v > 15) return 4;
+  if (v >= 15) return 4;
   if (v >= 8) return 3;
   if (v >= 3) return 2;
   return 1;
@@ -186,7 +186,7 @@ export default function VendorPrices() {
                 C2 — Kualitas / Flexural Strength (BENEFIT, 30%)
               </p>
               <p className="text-blue-700">
-                1=&lt;800 MPa · 2=800-1000 · 3=1001-1200 · 4=&gt;1200 MPa
+                1=&lt;800 MPa · 2=800-1000 · 3=1001-1199 · 4=&gt;=1200 MPa
               </p>
             </div>
             <div>
@@ -200,7 +200,7 @@ export default function VendorPrices() {
                 C4 — Reputasi / Usia Perusahaan (BENEFIT, 10%)
               </p>
               <p className="text-blue-700">
-                1=&lt;3 thn · 2=3-7 thn · 3=8-15 thn · 4=&gt;15 thn
+                1=&lt;3 thn · 2=3-7 thn · 3=8-14 thn · 4=&gt;=15 thn
               </p>
             </div>
           </div>

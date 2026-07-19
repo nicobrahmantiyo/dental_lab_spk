@@ -274,8 +274,8 @@ export default function TopsisAnalysis() {
                   BENEFIT · 30%
                 </span>
                 <p className="mt-0.5">
-                  Rubrik (ISO 6872): 1=&lt;800 · 2=800-1000 · 3=1001-1200 ·
-                  4=&gt;1200 MPa
+                  Rubrik (ISO 6872): 1=&lt;800 · 2=800-1000 · 3=1001-1199 ·
+                  4=&gt;=1200 MPa
                 </p>
               </div>
               <div>
@@ -293,8 +293,8 @@ export default function TopsisAnalysis() {
                   BENEFIT · 10%
                 </span>
                 <p className="mt-0.5">
-                  Rubrik (usia perusahaan): 1=&lt;3thn · 2=3-7thn · 3=8-15thn ·
-                  4=&gt;15thn
+                  Rubrik (usia perusahaan): 1=&lt;3thn · 2=3-7thn · 3=8-14thn ·
+                  4=&gt;=15thn
                 </p>
               </div>
             </div>
