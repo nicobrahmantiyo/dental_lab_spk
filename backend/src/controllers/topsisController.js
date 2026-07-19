@@ -19,11 +19,12 @@ function hargaToSkala(rp) {
 
 /**
  * C2 — Kualitas / Flexural Strength (BENEFIT)
- * Rubrik ISO 6872: 1=<800 MPa, 2=800-1000, 3=1001-1200, 4=>1200
+ * Rubrik ISO 6872 (sesuai Tabel 3.34 contoh perhitungan skripsi):
+ * 1=<800 MPa, 2=800-1000, 3=1001-1199, 4=>=1200
  */
 function flexuralToSkala(mpa) {
   const v = parseFloat(mpa) || 0;
-  if (v > 1200) return 4;
+  if (v >= 1200) return 4;
   if (v >= 1001) return 3;
   if (v >= 800) return 2;
   return 1;
@@ -43,11 +44,12 @@ function leadTimeToSkala(days) {
 
 /**
  * C4 — Reputasi Vendor / Usia Perusahaan (BENEFIT)
- * Rubrik: 1=<3thn, 2=3-7thn, 3=8-15thn, 4=>15thn
+ * Rubrik (sesuai Tabel 3.34 contoh perhitungan skripsi):
+ * 1=<3thn, 2=3-7thn, 3=8-14thn, 4=>=15thn
  */
 function reputasiToSkala(years) {
   const v = parseFloat(years) || 0;
-  if (v > 15) return 4;
+  if (v >= 15) return 4;
   if (v >= 8) return 3;
   if (v >= 3) return 2;
   return 1;
