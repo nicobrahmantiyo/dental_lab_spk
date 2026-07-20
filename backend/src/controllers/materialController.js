@@ -74,8 +74,8 @@ exports.create = async (req, res, next) => {
         (category_id, brand_id, kode_barang, nama_barang, unit, min_stock, price_per_unit)
        VALUES (?,?,?,?,?,?,?)`,
       [
-        category_id,
-        brand_id,
+        category_id ?? null,
+        brand_id ?? null,
         kode_barang,
         nama_barang,
         unit || "pcs",
@@ -109,12 +109,12 @@ exports.update = async (req, res, next) => {
       `UPDATE materials SET category_id=?, brand_id=?, nama_barang=?,
         unit=?, min_stock=?, price_per_unit=? WHERE id=? AND is_active=1`,
       [
-        category_id,
-        brand_id,
+        category_id ?? null,
+        brand_id ?? null,
         nama_barang,
-        unit,
-        min_stock,
-        price_per_unit,
+        unit || "pcs",
+        min_stock || 1,
+        price_per_unit || 0,
         req.params.id,
       ]
     );
