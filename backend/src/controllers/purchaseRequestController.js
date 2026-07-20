@@ -81,7 +81,7 @@ exports.create = async (req, res, next) => {
     await createNotification({
       roleTarget: "manager",
       type: "REQUEST",
-      title: `📋 Pengajuan Pembelian Baru: ${mat.kode_barang}`,
+      title: `Pengajuan Pembelian Baru: ${mat.kode_barang}`,
       message: `${req.user.full_name} mengajukan pembelian ${
         mat.nama_barang
       } sebanyak ${qty_requested} ${mat.unit || "pcs"}. Stok saat ini: ${
